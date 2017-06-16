@@ -3,12 +3,12 @@
 
 
 read:    CPX     10,i
-         BRGT    print       ; Si on a dépassé 10, on a fini
-         CHARI   str,x 
+         BRGT    print       ; Si on a dï¿½passï¿½ 10, on a fini
+         CHARI   str,x
          LDBYTEA str,x
          CPA     '\n',i
          BREQ    print       ; Si on entre \n, c'est fini
-         ADDX    1,i         ; incrémente X
+         ADDX    1,i         ; incrï¿½mente X
          BR      read
 
 print:   LDA     '\x00',i

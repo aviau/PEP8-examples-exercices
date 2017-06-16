@@ -1,18 +1,18 @@
-; Définissez une matice de 3 * 4 entiers de la première
-; façon mentionnée plus haut. Puis, affichez le contenu
+; Dï¿½finissez une matice de 3 * 4 entiers de la premiï¿½re
+; faï¿½on mentionnï¿½e plus haut. Puis, affichez le contenu
 ; de la matrice ligne par ligne.
 
 LDA 0,i
 LDX 0,i
 
-; On set X au début de la ligne
-; A représente le nomnre d'itérations
+; On set X au dï¿½but de la ligne
+; A reprï¿½sente le nomnre d'itï¿½rations
 lnofset:         LDX         0,i
                  LDA         0,i
 
 incx:            CPA         cur_lin,d
-                 BREQ        pline        ; Quand l'accumulateur atteint le numéro de la ligne, on a fini d'incrémenter X
-                 ADDX        col_cnt,i    ; Incrémenter X du nombre de colones qu'il y a dans une ligne
+                 BREQ        pline        ; Quand l'accumulateur atteint le numï¿½ro de la ligne, on a fini d'incrï¿½menter X
+                 ADDX        col_cnt,i    ; Incrï¿½menter X du nombre de colones qu'il y a dans une ligne
                  ADDX        col_cnt,i    ; 2 fois parce que 1 word = 2 bytes
                  ADDA        1,i
                  BR          incx
@@ -23,7 +23,7 @@ pcol:            DECO        tableau,x    ; Print la colonne
                  ADDA        1,i
                  ADDX        2,i
                  CPA         col_cnt,i
-                 BREQ        nxtln 
+                 BREQ        nxtln
                  BR          pcol
 
 nxtln:           CHARO       '\n',i

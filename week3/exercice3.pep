@@ -13,7 +13,7 @@ whileswp:        LDA         swapped,d
 
                  LDA         2,i          ; i=1
                  STA         i,d          ; i=1
-       
+
 loopsort:        LDA         i,d          ; i < xlen ?
                  CPA         ltableau,i   ; i < xlen ?
 
@@ -48,8 +48,8 @@ incremi:         LDA         i,d          ; i++
 ; Impression du tableau
 imprim:          STRO        strprint,d
                  LDX         0,i
-loopimp:         LDA         tableau,x 
-                 STA         nb,d 
+loopimp:         LDA         tableau,x
+                 STA         nb,d
                  DECO        nb,d
                  CHARO       '\n',i
                  ADDX        2,i
@@ -57,7 +57,7 @@ loopimp:         LDA         tableau,x
                  BRLT        loopimp
 fin:             STOP
 
-nb:              .WORD       0 
+nb:              .WORD       0
 i:               .WORD       0
 swapped:         .WORD       1
 strprint:        .ASCII      "\nImpression du tableau...\n\n\x00"
